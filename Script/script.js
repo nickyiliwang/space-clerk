@@ -228,7 +228,7 @@ $(function() {
     answerToCompare = item1.price * 2 + item2.price / 2 + item3.price;
     // Cheat: answerToCompare = 2;
 
-    console.log(answerToCompare);
+    // console.log(answerToCompare);
 
     let generateRandomCustomer = customers[randomizeNumber(10)];
     customerImage.attr("src", generateRandomCustomer.image);
