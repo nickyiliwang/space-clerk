@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./Assets/favicon.png" />
+    <link rel="stylesheet" href="./Styles/normalize.css" />
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <!-- font-family: "Rambla", sans-serif; -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Rambla:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Monoton', cursive; -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron:700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Space Clerk</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="marquee">
+      <h1>
+        | SPACE CLERK | SPACE CLERK | SPACE CLERK | SPACE CLERK | SPACE CLERK |
+        SPACE CLERK | SPACE CLERK | SPACE CLERK | SPACE CLERK | SPACE CLERK |
+        SPACE CLERK | SPACE CLERK | SPACE CLERK | SPACE CLERK
+      </h1>
+    </header>
+    <!-- end of header -->
+    <!-- start of Store section -->
+    <section class="storeItems">
+      <!-- start of Wrapper -->
+      <div class="wrapper">
+        <ul>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/abductor.svg" alt="abductor" />
+            </div>
+            <div class="item-description">
+              <div>Abductor</div>
+              <div>$ 10,314</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/blaster.svg" alt="blaster" />
+            </div>
+            <div class="item-description">
+              <div>Laser Blaster</div>
+              <div>$ 1241</div>
+            </div>
+          </li>
+
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/combo.svg" alt="combo" />
+            </div>
+            <div class="item-description">
+              <div>Mc'dCombo</div>
+              <div>$ 1299</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/goo.svg" alt="goo" />
+            </div>
+            <div class="item-description">
+              <div>Gooooo</div>
+              <div>$ 13,413</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/kale.svg" alt="kale" />
+            </div>
+            <div class="item-description">
+              <div>Kale</div>
+              <div>$ 0</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/mask.svg" alt="mask" />
+            </div>
+            <div class="item-description">
+              <div>Mask</div>
+              <div>$ 6666</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container nokia">
+              <img src="./Assets/Items/nokia.svg" alt="nokia" />
+            </div>
+            <div class="item-description">
+              <div>Nokia</div>
+              <div>$ 6310</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/probe.svg" alt="probe" />
+            </div>
+            <div class="item-description">
+              <div>Probe</div>
+              <div>$ 3456</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container protein">
+              <img src="./Assets/Items/protein.svg" alt="protein" />
+            </div>
+            <div class="item-description">
+              <div>Protein</div>
+              <div>$ 4577</div>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <img src="./Assets/Items/stargate.svg" alt="stargate" />
+            </div>
+            <div class="item-description">
+              <div>StarGate</div>
+              <div>$ 324,345</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- end of Wrapper -->
+    </section>
+    <!-- end of Store section -->
+    <!-- start of player interface -->
+    <section class="player-interface">
+      <!-- wrapper -->
+      <div class="wrapper container">
+        <!-- start of Manager Section -->
+        <div class="people manager">
+          <div>
+            <h2 class="manager-speech-bubble">
+              MANAGER: YOU ARE LATE! I'LL BE WATCHING YOU TODAY, NOW GET TO WORK
+              !!!
+            </h2>
+            <div class="image-container">
+              <img src="./Assets/people/manager-javier-cabezas.svg" alt="" />
+            </div>
+            <br />
+          </div>
+        </div>
+        <!-- end of Manager Section -->
+
+        <!-- player modal -->
+        <div class="player-modal">
+          <h2 class="game-intro">Introduction</h2>
+          <p class="game-intro-p">
+            Welcome to Space Clerk ! You are the space clerk working at an outer
+            space convenience store, your job is to operate cash registers and
+            total the amount of money the customer need to pay in order to be
+            checkout
+          </p>
+          <br />
+          <h2>YOU:</h2>
+          <button class="start">Start Working</button>
+          <button class="quit">THAT'S IT ! I'VE HAD ENOUGH !</button>
+        </div>
+        <!-- end of player modal -->
+
+        <!-- start of Cash-Register Section -->
+        <div class="cash-register">
+          <!-- Display Screen -->
+          <input
+            type="text"
+            class="cash-register-screen"
+            placeholder="0"
+            value=""
+            id="display"
+          />
+          <div class="cash-register-keys">
+            <button class="all-clear" id="clear">AC</button>
+            <!-- Number Buttons -->
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <button class="equal-sign" id="equals">=</button>
+            <!-- Operators -->
+            <button class="operator add">+</button>
+            <button class="operator multiply">*</button>
+            <button class="operator divide">/</button>
+          </div>
+        </div>
+        <!-- end of Cash-Resister Section -->
+
+        <!-- start of Customer Section -->
+        <div class="people customer">
+          <div>
+            <h2 class="customer-speech-bubble">
+              <span class="customerItem1"></span>
+              <span class="customerItem2"></span>
+              <span class="customerItem3"></span>
+            </h2>
+          </div>
+
+          <div class="image-container">
+            <img
+              src="./Assets/people/alien-giuditta-valentia-gentile.svg"
+              class="customer-image"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- end of Customer Section -->
+      </div>
+      <!-- end of wrapper -->
+    </section>
+    <!-- end of player interface -->
+
+    <!-- scripts -->
+    <script src="./Script/jquery-3.4.1.js"></script>
+    <script src="./Script/math.js"></script>
+    <script src="./Script/script.js"></script>
+  </body>
+</html>
