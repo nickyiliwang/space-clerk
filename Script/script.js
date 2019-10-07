@@ -115,9 +115,9 @@ $(function() {
   let resultToCalculate;
   let recordedKeyPressArr = [];
   let gameTime = 100;
-  let gameStart = null;
+  let gameStartTimer = null;
 
-  // Util functions
+  // Helper functions
   const randomizeNumber = max => {
     return Math.floor(Math.random() * Math.floor(max));
   };
@@ -146,7 +146,35 @@ $(function() {
       handleDisplay(e.keyCode - 48);
     }
   });
-  // end of Util functions
+
+  // addClass
+  function handleAddClass() {
+    playerModal.addClass("disappear");
+    customer.addClass("open");
+  }
+  // removeClass
+  function handleRemoveClass() {
+    playerModal.removeClass("disappear");
+    customer.removeClass("open");
+  }
+
+  // Restart Game
+  function restartGame() {
+    playerScore = 0;
+    gameTime = 100;
+    gameStartTimer = setInterval(() => {
+      gameTime--;
+      managerSpeechBubble.text(
+        `CHOP CHOP ! YOU HAVE ${gameTime} SECONDS LEFT, SO FAR YOU HAVE CHECKED OUT ${playerScore} CUSTOMERS`
+      );
+
+      if (gameTime === 0) {
+        clearInterval(gameStartTimer);
+        handleRemoveClass();
+      }
+    }, 1000);
+  }
+  // end of Helper functions
 
   //Cash Register Logic//////////////////////////////
   // Numbers
@@ -200,7 +228,7 @@ $(function() {
     answerToCompare = item1.price * 2 + item2.price / 2 + item3.price;
     // Cheat: answerToCompare = 2;
 
-    console.log(answerToCompare)
+    console.log(answerToCompare);
 
     let generateRandomCustomer = customers[randomizeNumber(10)];
     customerImage.attr("src", generateRandomCustomer.image);
@@ -215,40 +243,23 @@ $(function() {
     );
 
     generateNewCustomer();
-    playerModal.addClass("disappear");
-    customer.addClass("open");
+    handleAddClass();
 
     if (gameTime > 0) {
-      gameStart = setInterval(() => {
+      gameStartTimer = setInterval(() => {
         gameTime--;
         managerSpeechBubble.text(
           `CHOP CHOP ! YOU HAVE ${gameTime} SECONDS LEFT, SO FAR YOU HAVE CHECKED OUT ${playerScore} CUSTOMERS`
         );
         if (gameTime === 0) {
-          clearInterval(gameStart);
-          playerModal.removeClass("disappear");
-          customer.removeClass("open");
+          clearInterval(gameStartTimer);
+          handleRemoveClass();
           start.text("Retry ?");
           $(".game-intro").text("Final Score");
           $(".game-intro-p").text(
             `Game Over! Your final score is ${playerScore}`
           );
-          start.on("click", function() {
-            playerScore = 0;
-            gameTime = 100;
-            gameStart = setInterval(() => {
-              gameTime--;
-              managerSpeechBubble.text(
-                `CHOP CHOP ! YOU HAVE ${gameTime} SECONDS LEFT, SO FAR YOU HAVE CHECKED OUT ${playerScore} CUSTOMERS`
-              );
-
-              if (gameTime === 0) {
-                clearInterval(gameStart);
-                playerModal.removeClass("disappear");
-                customer.removeClass("open");
-              }
-            }, 1000);
-          });
+          start.on("click", restartGame);
         }
       }, 1000);
     }
