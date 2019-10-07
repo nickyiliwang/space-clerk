@@ -200,6 +200,7 @@ $(function() {
   equal.on("click", function() {
     result = math.evaluate(resultToCalculate);
     recordedKeyPressArr = [result];
+    display.val(result);
 
     // check for answer
     if (result === answerToCompare) {
