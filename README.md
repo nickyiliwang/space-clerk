@@ -8,4 +8,4 @@ total the amount of money the customer need to pay in order to be
 checkout!
 
 DEMO:
- https://nickyiliwang.github.io/space-clerk-math-game/
+ https://nickyiliwang.github.io/space-clerk/
