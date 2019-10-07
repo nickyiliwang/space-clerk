@@ -7,4 +7,5 @@ space convenience store, your job is to operate cash registers and
 total the amount of money the customer need to pay in order to be
 checkout!
 
-
+DEMO:
+ https://nickyiliwang.github.io/space-clerk-math-game/
