@@ -125,7 +125,14 @@ $(function() {
   function handleDisplay(value) {
     recordedKeyPressArr.push(value);
     resultToCalculate = recordedKeyPressArr.join("");
-    display.val(resultToCalculate);
+    document.querySelector(".cash-register-screen").focus();
+    document
+    .querySelector(".cash-register-screen")
+    .setSelectionRange(
+      document.querySelector(".cash-register-screen").value.length - 1,
+      document.querySelector(".cash-register-screen").value.length - 1
+      );
+      display.val(resultToCalculate);
   }
   // Exit App
   quit.on("click", function() {
@@ -200,7 +207,8 @@ $(function() {
   equal.on("click", function() {
     result = math.evaluate(resultToCalculate);
     recordedKeyPressArr = [result];
-    display.val(result);
+    // display.val(result);
+    display.val(recordedKeyPressArr);
 
     // check for answer
     if (result === answerToCompare) {
@@ -212,9 +220,11 @@ $(function() {
 
   // All clear
   clear.on("click", function() {
-    display.val("0");
+    display.val(null);
     operatorCount = 0;
     recordedKeyPressArr = [];
+    resultToCalculate = 0;
+    result = 0;
   });
 
   // End of Cash Register Logic//////////////////////
@@ -227,9 +237,6 @@ $(function() {
     item3 = storeItems[randomizeNumber(10)];
 
     answerToCompare = item1.price * 2 + item2.price / 2 + item3.price;
-    // Cheat: answerToCompare = 2;
-
-    // Cheat: console.log(answerToCompare);
 
     let generateRandomCustomer = customers[randomizeNumber(10)];
     customerImage.attr("src", generateRandomCustomer.image);
@@ -254,6 +261,7 @@ $(function() {
         );
         if (gameTime === 0) {
           clearInterval(gameStartTimer);
+          clear.click();
           handleRemoveClass();
           start.text("Retry ?");
           $(".game-intro").text("Final Score");
