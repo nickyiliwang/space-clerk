@@ -200,8 +200,8 @@ ul li {
 /*  People Sections */
 .player-modal {
   position: absolute;
-  height: 450px;
-  width: 480px;
+  height: 55vh;
+  width: 35vw;
   background-color: white;
   display: flex;
   justify-content: center;

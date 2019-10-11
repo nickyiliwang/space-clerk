@@ -125,13 +125,14 @@ $(function() {
   function handleDisplay(value) {
     recordedKeyPressArr.push(value);
     resultToCalculate = recordedKeyPressArr.join("");
-    document.querySelector(".cash-register-screen").focus();
-    document
-    .querySelector(".cash-register-screen")
-    .setSelectionRange(
-      document.querySelector(".cash-register-screen").value.length - 1,
-      document.querySelector(".cash-register-screen").value.length - 1
-      );
+    // depreciated go to the right
+    // document.querySelector(".cash-register-screen").focus();
+    // document
+    // .querySelector(".cash-register-screen")
+    // .setSelectionRange(
+    //   document.querySelector(".cash-register-screen").value.length - 1,
+    //   document.querySelector(".cash-register-screen").value.length - 1
+    //   );
       display.val(resultToCalculate);
   }
   // Exit App
